@@ -6,7 +6,7 @@ In this project, we will build a linear regression machine learning model  on th
 
 ## Project Flow 📈
 
-![](image.jpg)
+![Screenshot (24)](https://user-images.githubusercontent.com/102010266/180989103-a534f5cb-34e5-4482-ae8e-76e6509a2403.png)
 ## How to run the code?🏃‍♂️
 1. Used Visual Studio Code or Google Colab to execute this project.
 2. Ensure that all the required packages been installed.
