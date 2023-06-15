@@ -1,106 +1,41 @@
+# House Price Prediction
 
-# House Price Prediction 🏘️
+This repository contains code for a machine learning model that predicts house prices using linear regression on the Boston housing dataset.
 
-In this project, we will build a linear regression machine learning model  on the Boston housing dataset. This model will help us make better real estate decisions by providing house price predictions for that area.
+## Code Description
 
+The code performs the following tasks:
 
-## Project Flow 📈
+- Imports the necessary libraries for exploring, visualizing, and creating models from the dataset.
+- Loads the Boston house dataset from the sklearn datasets.
+- Creates a dataframe using the dataset and performs preprocessing on the dataframe.
+- Explores the data by displaying information such as the number of rows, columns, observations, missing values, duplicated records, and outliers.
+- Visualizes the data through scatter plots and bivariate plots.
+- Implements the linear regression model on the dataset.
+- Splits the dataset into training and testing sets.
+- Fits the linear regression model to the training data and predicts house prices for the testing data.
+- Evaluates the model by calculating metrics such as mean absolute error (MAE), mean squared error (MSE), square root of mean squared error (SRMSE), and R-squared score.
+- Plots the predicted house prices against the Nitric Oxide content.
+- Displays a pair plot of the selected features against the house prices.
 
-![Screenshot (24)](https://user-images.githubusercontent.com/102010266/180989103-a534f5cb-34e5-4482-ae8e-76e6509a2403.png)
-## How to run the code?🏃‍♂️
-1. Used Visual Studio Code or Google Colab to execute this project.
-2. Ensure that all the required packages been installed.
-3. Download the ipynb and store it on jupyter directory.
-4. ipynb can run each cell at time or can be run completely in on go.
-## Reference🔗
+## Prerequisites
 
-[Loading the dataset]('https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html')
+To run the code, make sure you have the following dependencies installed:
 
-[Boston Housing Dataset]('https://github.com/selva86/datasets/blob/master/BostonHousing.csv')
+- numpy
+- matplotlib
+- sklearn
+- pandas
+- seaborn
+- scipy
 
-[What is Linear Regression?]('https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-trend-lines/a/linear-regression-review')
-## Requriements🔨
-*This project is written in python, so the required python packages are give below:*
+## Usage
 
-- For importing and visualizing Dataset following packages are needed
-    
-        import pandas as pd  
-        import numpy as np
-        import matplotlib.pyplot as plt 
-        %matplotlib inline
-        import seaborn as sns 
+1. Open the Jupyter notebook `House_Price_Prediction.ipynb` in a Python environment or a Jupyter notebook environment.
 
-- For building a machine learing model
+2. Run the cells in the notebook sequentially to execute the code.
 
-        from sklearn.linear_model import LinearRegression
-        
-- For model testing
-        
-        from sklearn import metrics
-## Explanation of the code🔎
+## Acknowledgments
 
-#### Importing libraries and dataset
-In this section we will loading all the required libraries which we will need to develop, visualize and test
-our model. We will also be loading our dataset from Sklearn.
-
-- Loading the libraries
-
-        import numpy as np
-        import matplotlib.pyplot as plt 
-        from sklearn import metrics
-        import pandas as pd  
-        import seaborn as sns 
-        from scipy import stats
-        from sklearn.datasets import load_boston
-        from sklearn.linear_model import LinearRegression
-        from sklearn import metrics
-        from sklearn import model_selection
-        import math
-        %matplotlib inline
-- Loading Dataset
-
-        boston_dataset = load_boston()
-        boston = pd.DataFrame(boston_dataset.data, columns=boston_dataset.feature_names)
-
-#### Data exploration and preprocessing
-In this section we will analyse our dataset using different methods and then we'll create a
-dataframe using the same. We will also carry out preprocessing on the dataframe for using
-the linear regression model.
-
-#### Model Implementation
-In this section we will import linear regression model from Sklearn. Use features identified
-from heatmap and label to create training and testing set. Finally we will train our model
-using training set.
-
-- Select features for creating training and test set.
-
-        x1 = bdf[['NOX','RM','DIS','PTRATIO','LSTAT' ]]
-        y1 = bdf['MEDV']
-- Use train_test split() from Sklearn to create train and test sets
-
-        x_train, x_test, y_train, y_test = train_test_split(X1, Y1, test_size=0.33,random_state = 5 )
-- Use regression on training data
-
-        regressor = LinearRegression()
-        regressor.fit(x_train, y_train)
-        y_pred = regressor.predict(x_test)
-        df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
-        df
-
-#### Model Testing
-In this section we will test our prediction with testing data and calculate R2 score to
-measure model accuracy. We will also plot the results of the linear regression model.
-
-- Display the following: Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, R2 Score.
-
-        metrics.mean_absolute_error()
-        metrics.mean_squared_error()
-        np.sqrt(metrics.mean_squared_error())
-        metrics.r2_score()
-
-## Results📝
-
-You should be able to achieve the following:
-- Display and interpret the R2 score and results of error functions
-- Create and display a plot using negative slope and positive y intercept obtained from polyfit() function for Median value label and Nitric oxide content attribute.
-- Create and display a pairplot of the attributes against the label where attributes with positive corelation with the label will have plots with positive slope and attributes having negative corelation will have negative slope.
+- The code is based on the Boston housing dataset provided by sklearn.
+- This project is for educational purposes and serves as an example for implementing a machine learning model for house price prediction.
